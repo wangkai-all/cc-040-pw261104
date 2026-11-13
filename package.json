@@ -1,0 +1,38 @@
+{
+  "name": "order-harvester",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "本地订单演示站点 + Playwright 可见内容采集操作台",
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "build": "vite build",
+    "start": "vite build && tsx src/server/index.ts",
+    "dev": "vite build && tsx watch src/server/index.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vite build && tsx --test --test-concurrency=1 test/unit.test.ts test/e2e.test.ts",
+    "test:unit": "tsx --test test/unit.test.ts",
+    "test:e2e": "vite build && tsx --test --test-concurrency=1 test/e2e.test.ts",
+    "setup:browsers": "playwright install chromium"
+  },
+  "dependencies": {
+    "archiver": "^7.0.1",
+    "express": "^5.1.0",
+    "playwright": "^1.65.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/archiver": "^6.0.4",
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.10.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.1.0",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "vite": "^7.2.2"
+  }
+}
